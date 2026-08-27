@@ -12,11 +12,13 @@ import {
   Share,
   PlusSquare,
   CheckCircle,
-  Laptop
+  Laptop,
+  Shield,
+  HelpCircle
 } from 'lucide-react';
 
 export const InstallPage: React.FC = () => {
-  const { isInstallable, isInstalled, isIOS, promptInstall } = usePwaInstall();
+  const { isInstallable, isInstalled, isIOS, isBrave, promptInstall } = usePwaInstall();
 
   return (
     <div className="space-y-8 pb-12">
@@ -27,7 +29,7 @@ export const InstallPage: React.FC = () => {
           Install FormsPH App
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
-          Install FormsPH directly to your phone, tablet, or laptop. No app store account required, no download bloat.
+          Install FormsPH directly to your phone, tablet, or desktop. No app store account required, no download bloat.
         </p>
       </div>
 
@@ -37,7 +39,7 @@ export const InstallPage: React.FC = () => {
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold">
             {isInstalled ? (
               <>
-                <CheckCircle className="w-3.5 h-3.5" /> Already Installed & Running Standalone
+                <CheckCircle className="w-3.5 h-3.5" /> Running as Installed Standalone App
               </>
             ) : (
               <>
@@ -46,14 +48,14 @@ export const InstallPage: React.FC = () => {
             )}
           </div>
           <h2 className="text-xl sm:text-2xl font-bold">
-            {isInstalled ? 'FormsPH is ready offline on this device' : 'Add FormsPH to Your Home Screen or Desktop'}
+            {isInstalled ? 'FormsPH is Ready Offline on this Device' : 'Add FormsPH to Your Home Screen or Desktop'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
             Enjoy full offline capability, faster startup, zero browser toolbars, and resilient local storage.
           </p>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center md:items-end gap-2">
           {!isInstalled && isInstallable && (
             <Button
               variant="primary"
@@ -72,13 +74,39 @@ export const InstallPage: React.FC = () => {
             </div>
           )}
 
-          {!isInstalled && !isInstallable && isIOS && (
-            <div className="px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 text-xs text-center">
-              See iOS Safari instructions below
+          {!isInstalled && !isInstallable && (
+            <div className="flex flex-col items-center md:items-end gap-1">
+              <Button
+                variant="outline"
+                size="md"
+                icon={<Download className="w-4 h-4" />}
+                onClick={promptInstall}
+                className="text-slate-200 border-slate-700 hover:bg-slate-800"
+              >
+                Trigger Install Prompt
+              </Button>
+              <span className="text-[11px] text-slate-400">
+                {isIOS
+                  ? 'Use Safari "Add to Home Screen" below'
+                  : 'Or click the install icon (⊕) in the browser address bar'}
+              </span>
             </div>
           )}
         </div>
       </div>
+
+      {/* Brave / Browser Note */}
+      {isBrave && (
+        <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 flex items-start gap-3 text-xs text-amber-200">
+          <Shield className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <strong className="text-amber-300 block">Brave Browser Detected</strong>
+            <p>
+              Brave supports full PWA installation. If the automated popup doesn't appear, you can click the install icon located inside the right side of the address bar, or select <strong>Menu (3 lines) &gt; Install FormsPH</strong>.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* 5 Core Reasons Why Install */}
       <div>
@@ -156,10 +184,38 @@ export const InstallPage: React.FC = () => {
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Chrome / Brave / Edge (Desktop) */}
+          <Card className="space-y-3">
+            <div className="flex items-center gap-2">
+              <Laptop className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Chrome / Brave / Edge (Desktop)</h4>
+            </div>
+            <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
+              <li>Click the <strong>Install App Now</strong> button above.</li>
+              <li>Or click the <strong>Install icon (⊕)</strong> on the right side of the address bar.</li>
+              <li>Or open the browser menu &gt; select <strong>Install FormsPH</strong>.</li>
+              <li>FormsPH opens in a dedicated, distraction-free desktop window.</li>
+            </ol>
+          </Card>
+
+          {/* Android (Chrome / Brave / Samsung Internet) */}
+          <Card className="space-y-3">
+            <div className="flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Android (Chrome / Brave)</h4>
+            </div>
+            <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
+              <li>Tap the <strong>Install App Now</strong> button above.</li>
+              <li>Or tap the <strong>Menu (3 dots)</strong> in the top right.</li>
+              <li>Select <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+              <li>Confirm to add FormsPH to your app drawer and home screen.</li>
+            </ol>
+          </Card>
+
           {/* iOS Safari */}
           <Card className="space-y-3">
             <div className="flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+              <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">iPhone / iPad (Safari)</h4>
             </div>
             <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
@@ -169,36 +225,26 @@ export const InstallPage: React.FC = () => {
               <li>Tap <strong>Add</strong> in the top-right corner.</li>
             </ol>
           </Card>
-
-          {/* Android Chrome */}
-          <Card className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Smartphone className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Android (Chrome / Brave)</h4>
-            </div>
-            <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
-              <li>Open in <strong>Chrome</strong> or <strong>Brave</strong>.</li>
-              <li>Tap the <strong>Install App</strong> button above or the browser menu (3 dots).</li>
-              <li>Select <strong>Install app</strong> or <strong>Add to Home Screen</strong>.</li>
-              <li>Confirm the prompt to install.</li>
-            </ol>
-          </Card>
-
-          {/* Desktop */}
-          <Card className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Laptop className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Mac & Windows (Desktop)</h4>
-            </div>
-            <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
-              <li>Open in Chrome, Edge, or Brave.</li>
-              <li>Click the <strong>Install</strong> icon in the address bar (right side).</li>
-              <li>Or click the <strong>Install App Now</strong> button above.</li>
-              <li>The app opens in its own window.</li>
-            </ol>
-          </Card>
         </div>
       </div>
+
+      {/* Troubleshooting Tips */}
+      <Card className="bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800">
+        <div className="flex items-center gap-2 mb-2 text-xs font-bold text-slate-800 dark:text-slate-200">
+          <HelpCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+          <span>Troubleshooting & Installability Tips</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600 dark:text-slate-400">
+          <div>
+            <strong className="text-slate-700 dark:text-slate-300 block mb-0.5">Prompt Dismissed Previously?</strong>
+            Chromium browsers suppress the automated popup if dismissed recently. You can test in an Incognito / Private window or click the address bar install icon.
+          </div>
+          <div>
+            <strong className="text-slate-700 dark:text-slate-300 block mb-0.5">HTTPS & Security</strong>
+            PWAs require a secure HTTPS context or localhost. FormsPH automatically leverages HTTPS when hosted.
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };

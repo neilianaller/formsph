@@ -69,7 +69,7 @@ export const PdsFormEditor: React.FC<PdsFormEditorProps> = ({
   const [lastSavedTime, setLastSavedTime] = useState<string>('Just now');
   const [showPrintModal, setShowPrintModal] = useState(false);
   const [isEditingTitle, setIsEditingTitle] = useState(false);
-  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Debounced Autosave to IndexedDB
   const handleRecordChange = (updated: PdsRecord) => {

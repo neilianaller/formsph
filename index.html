@@ -8,6 +8,27 @@
     <meta name="description" content="Offline-first, privacy-first Philippine government form builder starting with PDS (CS Form No. 212 Revised 2026). All data is stored locally on your device." />
     <meta name="theme-color" content="#0F172A" />
     
+    <!-- PWA Icons & Meta -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FormsPH" />
+
+    <!-- Early BeforeInstallPrompt Capturing -->
+    <script>
+      window.deferredInstallPrompt = null;
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        window.deferredInstallPrompt = e;
+        window.dispatchEvent(new CustomEvent('pwa-prompt-available'));
+      });
+      window.addEventListener('appinstalled', function() {
+        window.deferredInstallPrompt = null;
+        window.dispatchEvent(new CustomEvent('pwa-app-installed'));
+      });
+    </script>
+    
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="FormsPH — Philippine Government Form Builder" />
