@@ -20,8 +20,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <HardDrive className="w-3.5 h-3.5" />
             <span>IndexedDB Storage</span>
           </div>
-          <span className="hidden sm:inline">•</span>
-          <span>CS Form No. 212 (Revised 2026)</span>
         </div>
 
         {/* Right: Links & Open Source */}
@@ -39,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             About & License
           </button>
           <a
-            href="https://github.com/topics/philippines-government-forms"
+            href="https://github.com/neilianaller/formsph"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer"
