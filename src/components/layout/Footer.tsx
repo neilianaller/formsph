@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, HardDrive, Heart } from "lucide-react";
+import { ShieldCheck, HardDrive } from "lucide-react";
 
 interface FooterProps {
   onNavigate: (tab: string) => void;
