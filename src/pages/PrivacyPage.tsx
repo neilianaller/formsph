@@ -59,10 +59,10 @@ export const PrivacyPage: React.FC = () => {
             <EyeOff className="w-6 h-6" />
           </div>
           <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
-            2. Zero Telemetry & Trackers
+            2. Privacy-Friendly Metrics Only
           </h3>
           <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            We do not load Google Analytics, Facebook Pixels, Hotjar, or advertising scripts. Zero personally identifiable information (PII) is transmitted over any network.
+            Zero personally identifiable information (PII), form input, or sensitive documents are ever tracked or transmitted. Only cookieless, privacy-preserving aggregate page views (via Vercel Analytics) are enabled to monitor app availability.
           </p>
         </Card>
 
@@ -162,7 +162,7 @@ export const PrivacyPage: React.FC = () => {
         </p>
         <div className="pt-2">
           <a
-            href="https://github.com/topics/philippines-government-forms"
+            href="https://github.com/neilianaller/formsph"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-teal-300 hover:text-teal-200 font-semibold"

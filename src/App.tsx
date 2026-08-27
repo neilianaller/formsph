@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { db, initializeSettings } from './db/db';
 import { PdsRecord } from './types/pds';
 import { createNewPdsRecord } from './db/defaultPdsData';
@@ -140,6 +141,9 @@ export function App() {
       {currentTab === 'about' && (
         <AboutPage onReplayTour={() => setTourForceOpen(true)} />
       )}
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </Layout>
   );
 }

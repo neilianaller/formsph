@@ -157,7 +157,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <div>
             <p className="text-xs text-slate-500 dark:text-slate-400">Cloud Sync Status</p>
             <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
-              0% Telemetry (Device Only)
+              Local Form Data Only
             </p>
           </div>
         </Card>
@@ -352,28 +352,8 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                 <FileText className="w-5 h-5 text-slate-400" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
-                Daily Time Record (DTR)
+                Service Record
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
-                CS Form 48 monthly attendance sheet with overtime calculations.
-              </p>
-            </div>
-            <span className="text-xs text-slate-400 font-medium">Coming soon in next release</span>
-          </Card>
-
-          {/* Coming Soon: Leave Application */}
-          <Card className="opacity-75 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <Badge variant="default" size="sm">Planned</Badge>
-                <FileText className="w-5 h-5 text-slate-400" />
-              </div>
-              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
-                Application for Leave
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
-                CS Form No. 6 (Vacation, Sick, Maternity, Paternity, Solo Parent leave).
-              </p>
             </div>
             <span className="text-xs text-slate-400 font-medium">Coming soon in next release</span>
           </Card>
