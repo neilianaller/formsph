@@ -68,7 +68,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
           <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-3">
             Key Architecture Features
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
             <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
               <HardDrive className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
               <div>
@@ -93,13 +93,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <Sparkles className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-              <div>
-                <strong className="text-slate-900 dark:text-slate-100 block mb-0.5">CSC 2026 Revision Schema</strong>
-                Strict adherence to UMID, Pag-IBIG, PhilHealth, PhilSys PCN, and YYYY education attendance dates.
-              </div>
-            </div>
           </div>
         </div>
 
@@ -124,7 +117,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
           <div className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
             <div className="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
               <div className="flex items-center justify-between font-semibold text-slate-900 dark:text-slate-100 mb-1">
-                <span>Version 1.0.0 (Initial Release)</span>
+                <span>Version {version} (Initial Release)</span>
                 <span className="text-slate-400 text-[10px]">2026</span>
               </div>
               <ul className="list-disc list-inside space-y-0.5 text-[11px]">

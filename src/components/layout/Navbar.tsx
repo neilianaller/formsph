@@ -76,9 +76,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="text-teal-600 dark:text-teal-400">PH</span>
               </span>
             </div>
-            <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium hidden sm:block">
-              Privacy-First • Local Storage Only
-            </p>
           </div>
         </div>
 
