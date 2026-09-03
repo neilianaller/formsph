@@ -67,7 +67,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
 
       {/* Spouse Information (Item 22) */}
       <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+        <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
           22. Spouse's Information (If Applicable)
         </h4>
 
@@ -81,7 +81,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
               value={data.spouse.surname}
               onChange={(e) => updateSpouse('surname', e.target.value)}
               placeholder="e.g. DELA CRUZ (or N/A)"
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
             />
           </div>
 
@@ -94,7 +94,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
               value={data.spouse.firstName}
               onChange={(e) => updateSpouse('firstName', e.target.value)}
               placeholder="e.g. MARIA"
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
             />
           </div>
 
@@ -107,7 +107,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
               value={data.spouse.middleName}
               onChange={(e) => updateSpouse('middleName', e.target.value)}
               placeholder="e.g. REYES"
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
             />
           </div>
 
@@ -120,7 +120,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
               value={data.spouse.nameExtension}
               onChange={(e) => updateSpouse('nameExtension', e.target.value)}
               placeholder="e.g. JR., III"
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
             />
           </div>
         </div>
@@ -184,7 +184,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
       <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+            <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
               23. Name of Children (Write Full Name and Date of Birth)
             </h4>
             <p className="text-[11px] text-slate-500 dark:text-slate-400">
@@ -222,7 +222,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                     value={child.fullName}
                     onChange={(e) => updateChild(idx, 'fullName', e.target.value)}
                     placeholder="e.g. JUAN DELA CRUZ JR."
-                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
                   />
                 </div>
 
@@ -256,7 +256,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Father's Info (Item 24) */}
         <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
             24. Father's Surname & Name
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -267,7 +267,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.father.surname}
                 onChange={(e) => updateFather('surname', e.target.value)}
                 placeholder="e.g. DELA CRUZ"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
             <div>
@@ -277,7 +277,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.father.firstName}
                 onChange={(e) => updateFather('firstName', e.target.value)}
                 placeholder="e.g. PEDRO"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
             <div>
@@ -287,7 +287,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.father.middleName}
                 onChange={(e) => updateFather('middleName', e.target.value)}
                 placeholder="e.g. GARCIA"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
             <div>
@@ -297,7 +297,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.father.nameExtension || ''}
                 onChange={(e) => updateFather('nameExtension', e.target.value)}
                 placeholder="e.g. SR."
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
           </div>
@@ -305,7 +305,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
 
         {/* Mother's Info (Item 25) */}
         <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-3">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
             25. Mother's Maiden Name
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -318,7 +318,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.mother.maidenSurname || data.mother.surname}
                 onChange={(e) => updateMother('maidenSurname', e.target.value)}
                 placeholder="e.g. SANTOS"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
             <div>
@@ -328,7 +328,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.mother.firstName}
                 onChange={(e) => updateMother('firstName', e.target.value)}
                 placeholder="e.g. JUANA"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
             <div>
@@ -338,7 +338,7 @@ export const Section2Family: React.FC<Section2FamilyProps> = ({ data, onChange }
                 value={data.mother.middleName}
                 onChange={(e) => updateMother('middleName', e.target.value)}
                 placeholder="e.g. LOPEZ"
-                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
               />
             </div>
           </div>

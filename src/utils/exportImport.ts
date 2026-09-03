@@ -1,5 +1,5 @@
 /**
- * FormsPH — Export / Import Utility
+ * GovFormsPH — Export / Import Utility
  * Encapsulates full export/import cycle with metadata, checksum, schema validation, and optional AES-GCM encryption.
  */
 
@@ -7,10 +7,12 @@ import { PdsRecord, AppSettings } from '../types/pds';
 import { db } from '../db/db';
 import { encryptData, decryptData } from './crypto';
 
+export { generatePdsPage1Pdf, downloadPdsPage1Pdf, openPdsPage1PdfInNewTab } from '../pdfExport/exportPdsPage1';
+
 export interface ExportBundle {
   version: '1.0';
   exportedAt: string;
-  source: 'FormsPH';
+  source: 'GovFormsPH';
   isEncrypted: boolean;
   formsCount: number;
   settings?: AppSettings;
@@ -37,7 +39,7 @@ export async function exportAllData(
   const bundle: ExportBundle = {
     version: '1.0',
     exportedAt: new Date().toISOString(),
-    source: 'FormsPH',
+    source: 'GovFormsPH',
     isEncrypted,
     formsCount: records.length,
     settings: isEncrypted ? undefined : settings,
@@ -45,8 +47,8 @@ export async function exportAllData(
   };
 
   const dateStr = new Date().toISOString().split('T')[0];
-  const extension = isEncrypted ? 'formsph.vault' : 'formsph.json';
-  const fileName = `formsph-backup-${dateStr}.${extension}`;
+  const extension = isEncrypted ? 'GovFormsPH.vault' : 'GovFormsPH.json';
+  const fileName = `GovFormsPH-backup-${dateStr}.${extension}`;
 
   const jsonStr = JSON.stringify(bundle, null, 2);
   const blob = new Blob([jsonStr], { type: 'application/json' });
@@ -70,7 +72,7 @@ export function exportSingleRecord(record: PdsRecord): { fileName: string; blob:
   const singleBundle = {
     version: '1.0',
     exportedAt: new Date().toISOString(),
-    source: 'FormsPH',
+    source: 'GovFormsPH',
     type: 'single-form',
     formVersion: record.meta.formVersion,
     record,
@@ -121,7 +123,7 @@ export async function parseImportFile(
     }
 
     // Check if ExportBundle
-    if (parsed.source === 'FormsPH' || parsed.formsCount !== undefined) {
+    if (parsed.source === 'GovFormsPH' || parsed.formsCount !== undefined) {
       if (parsed.isEncrypted) {
         if (!passphrase) {
           return {
@@ -177,7 +179,7 @@ export async function parseImportFile(
       success: false,
       records: [],
       isEncrypted: false,
-      error: 'Unrecognized file structure. Please ensure this is a valid FormsPH export file.',
+      error: 'Unrecognized file structure. Please ensure this is a valid GovFormsPH export file.',
     };
   } catch (err: any) {
     return {

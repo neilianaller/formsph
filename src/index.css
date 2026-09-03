@@ -37,38 +37,53 @@
 
 /* ================= PRINT STYLES ================= */
 @media print {
+  /* ---- ISOLATION: hide everything except the print portal ---- */
+  body > *:not(#pds-print-portal) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  #pds-print-portal {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+  }
+
+  /* ---- Body reset ---- */
   body {
     background: #ffffff !important;
     color: #000000 !important;
-    font-size: 10px !important;
+    font-size: 9pt !important;
     line-height: 1.15 !important;
-    margin: 0 !important;
-    padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  header, footer, nav, button, .print\:hidden {
-    display: none !important;
-  }
-
-  .page-section {
+  /* ---- Page breaks & Page containers ---- */
+  .pds-page {
     page-break-after: always !important;
     break-after: page !important;
-    margin-bottom: 2rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .pds-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
   }
 
-  .print\:break-before-page {
-    page-break-before: always !important;
-    break-before: page !important;
-  }
-
-  table {
+  /* ---- Table borders ---- */
+  #pds-print-portal table {
     border-collapse: collapse !important;
     width: 100% !important;
   }
-
-  th, td {
+  #pds-print-portal th,
+  #pds-print-portal td {
     border: 1px solid #000000 !important;
+  }
+
+  /* ---- Hide web-only controls inside the print area ---- */
+  .pds-print-controls {
+    display: none !important;
   }
 }

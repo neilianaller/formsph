@@ -105,7 +105,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
           Export & Import Data
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
-          FormsPH has no central server or cloud tracking. Moving your forms to a new computer, phone, or browser is done through exporting a backup file and importing it.
+          GovFormsPH has no central server or cloud tracking. Moving your forms to a new computer, phone, or browser is done through exporting a backup file and importing it.
         </p>
       </div>
 
@@ -151,7 +151,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
             <p className="text-[10px] text-slate-500 dark:text-slate-400">
               {exportPassphrase
                 ? 'Your file will be encrypted using browser-native Web Crypto AES-256 before download.'
-                : 'Will generate a standard human-readable JSON backup file (.formsph.json).'}
+                : 'Will generate a standard human-readable JSON backup file (.GovFormsPH.json).'}
             </p>
           </div>
 
@@ -201,7 +201,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
           </div>
 
           <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Select a <code className="font-mono bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">.json</code> or <code className="font-mono bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">.vault</code> file created by FormsPH.
+            Select a <code className="font-mono bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">.json</code> or <code className="font-mono bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded">.vault</code> file created by GovFormsPH.
           </p>
 
           <input
@@ -221,7 +221,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
               {importFileName || 'Click to select backup file'}
             </p>
             <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-              Supports .formsph.json, .vault, or individual form JSON exports
+              Supports .GovFormsPH.json, .vault, or individual form JSON exports
             </p>
           </div>
 
@@ -318,7 +318,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
           Why Export / Import Replaces the Cloud
         </h3>
         <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-          Traditional web apps upload your sensitive government information (such as PhilSys PCN, UMID, TIN, personal family details, and compensation) to third-party databases. <strong>FormsPH has no remote database</strong>. You remain the sole owner and custodian of your data at all times.
+          Traditional web apps upload your sensitive government information (such as PhilSys PCN, UMID, TIN, personal family details, and compensation) to third-party databases. <strong>GovFormsPH has no remote database</strong>. You remain the sole owner and custodian of your data at all times.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[11px] text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-800">
           <div>
@@ -327,7 +327,7 @@ export const ExportImportPage: React.FC<ExportImportPageProps> = ({ onImportComp
           </div>
           <div>
             <strong className="text-slate-800 dark:text-slate-200 block mb-0.5">2. Open on Any Device</strong>
-            Open FormsPH on your office PC or phone, go to Export / Import, and select the file.
+            Open GovFormsPH on your office PC or phone, go to Export / Import, and select the file.
           </div>
           <div>
             <strong className="text-slate-800 dark:text-slate-200 block mb-0.5">3. 100% Offline Restoration</strong>

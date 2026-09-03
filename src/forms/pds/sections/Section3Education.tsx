@@ -56,7 +56,7 @@ export const Section3Education: React.FC<Section3EducationProps> = ({ data, onCh
     courseLabel: string = 'Basic Education / Degree / Course'
   ) => (
     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-3">
-      <h5 className="text-xs font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+      <h5 className="text-xs font-bold  tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
         <GraduationCap className="w-4 h-4 text-teal-600 dark:text-teal-400" />
         {title}
       </h5>
@@ -71,7 +71,7 @@ export const Section3Education: React.FC<Section3EducationProps> = ({ data, onCh
             value={entry.nameOfSchool}
             onChange={(e) => onFieldChange('nameOfSchool', e.target.value)}
             placeholder="e.g. University of the Philippines Diliman"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
 
@@ -84,7 +84,7 @@ export const Section3Education: React.FC<Section3EducationProps> = ({ data, onCh
             value={entry.degreeCourse}
             onChange={(e) => onFieldChange('degreeCourse', e.target.value)}
             placeholder="e.g. Bachelor of Science in Public Administration"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
       </div>
@@ -153,7 +153,7 @@ export const Section3Education: React.FC<Section3EducationProps> = ({ data, onCh
   ) => (
     <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-4">
       <div className="flex items-center justify-between">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+        <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
           {title}
         </h4>
         <Button

@@ -10,7 +10,6 @@ import {
   HardDrive,
   Download,
   HelpCircle,
-  Sparkles
 } from 'lucide-react';
 
 interface AboutPageProps {
@@ -26,7 +25,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
       <div>
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <Info className="w-6 h-6 text-teal-600 dark:text-teal-400" />
-          About FormsPH
+          About GovFormsPH
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
           Open-source, privacy-first Philippine government form builder for public servants and civil workers.
@@ -43,7 +42,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                  FormsPH
+                  GovFormsPH
                 </h2>
                 <Badge variant="success" size="sm">v{version}</Badge>
               </div>
@@ -102,7 +101,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
             MIT License & Open Source
           </h3>
           <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-xl font-mono text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed border border-slate-200 dark:border-slate-800">
-            <p className="mb-2"><strong>MIT License</strong> — Copyright (c) 2026 FormsPH Contributors</p>
+            <p className="mb-2"><strong>MIT License</strong> — Copyright (c) 2026 GovFormsPH Contributors</p>
             <p>
               Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies.
             </p>

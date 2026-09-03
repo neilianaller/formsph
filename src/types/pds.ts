@@ -1,5 +1,5 @@
 /**
- * FormsPH — Types for CS Form No. 212 (Personal Data Sheet, Revised 2026)
+ * GovFormsPH — Types for CS Form No. 212 (Personal Data Sheet, Revised 2026)
  * Strict compliance with Civil Service Commission (CSC) Form 212 (Revised 2026) specifications.
  */
 

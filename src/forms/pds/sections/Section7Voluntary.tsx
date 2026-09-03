@@ -97,7 +97,7 @@ export const Section7Voluntary: React.FC<Section7VoluntaryProps> = ({ data, onCh
                   value={item.organizationNameAddress}
                   onChange={(e) => updateRow(idx, 'organizationNameAddress', e.target.value)}
                   placeholder="e.g. Philippine Red Cross - Manila Chapter, Bonifacio Drive, Port Area"
-                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
                 />
               </div>
 
@@ -141,7 +141,7 @@ export const Section7Voluntary: React.FC<Section7VoluntaryProps> = ({ data, onCh
                   value={item.positionNatureOfWork}
                   onChange={(e) => updateRow(idx, 'positionNatureOfWork', e.target.value)}
                   placeholder="e.g. Volunteer Disaster Relief Coordinator"
-                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
                 />
               </div>
             </div>

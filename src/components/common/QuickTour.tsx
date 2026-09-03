@@ -12,8 +12,8 @@ interface TourStep {
 
 const TOUR_STEPS: TourStep[] = [
   {
-    title: 'Welcome to FormsPH',
-    description: 'FormsPH is an offline-first, 100% private government form filler designed for Philippine public servants. It starts with the Personal Data Sheet (CS Form No. 212 Revised 2026).',
+    title: 'Welcome to GovFormsPH',
+    description: 'GovFormsPH is an offline-first, 100% private government form filler designed for Philippine public servants. It starts with the Personal Data Sheet (CS Form No. 212 Revised 2026).',
     icon: <ShieldCheck className="w-8 h-8 text-teal-600 dark:text-teal-400" />,
     tip: 'No backend servers, no cloud tracking, zero accounts needed.',
   },
@@ -31,7 +31,7 @@ const TOUR_STEPS: TourStep[] = [
   },
   {
     title: 'Install as an Offline App',
-    description: 'FormsPH is a Progressive Web App (PWA). You can install it to your home screen or desktop. Once installed, it works completely without internet access.',
+    description: 'GovFormsPH is a Progressive Web App (PWA). You can install it to your home screen or desktop. Once installed, it works completely without internet access.',
     icon: <Smartphone className="w-8 h-8 text-amber-600 dark:text-amber-400" />,
     tip: 'Installed PWAs have higher storage priority against automatic browser cleanup.',
   },
@@ -60,7 +60,7 @@ export const QuickTour: React.FC<QuickTourProps> = ({ forceOpen, onClose }) => {
     }
 
     // Check if user has seen tour
-    const localTourSeen = localStorage.getItem('formsph_tour_seen');
+    const localTourSeen = localStorage.getItem('GovFormsPH_tour_seen');
     if (!localTourSeen) {
       db.settings.toCollection().first().then((settings) => {
         if (!settings?.hasSeenTour) {
@@ -72,7 +72,7 @@ export const QuickTour: React.FC<QuickTourProps> = ({ forceOpen, onClose }) => {
 
   const handleFinish = async () => {
     setIsOpen(false);
-    localStorage.setItem('formsph_tour_seen', 'true');
+    localStorage.setItem('GovFormsPH_tour_seen', 'true');
     const settings = await db.settings.toCollection().first();
     if (settings && settings.id) {
       await db.settings.update(settings.id, { hasSeenTour: true });

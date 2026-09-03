@@ -61,7 +61,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
             value={data.surname}
             onChange={(e) => updateField('surname', e.target.value)}
             placeholder="e.g. DELA CRUZ"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
 
@@ -74,7 +74,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
             value={data.firstName}
             onChange={(e) => updateField('firstName', e.target.value)}
             placeholder="e.g. JUAN"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
 
@@ -87,7 +87,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
             value={data.middleName}
             onChange={(e) => updateField('middleName', e.target.value)}
             placeholder="e.g. SANTOS (or N/A)"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
 
@@ -100,7 +100,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
             value={data.nameExtension}
             onChange={(e) => updateField('nameExtension', e.target.value)}
             placeholder="e.g. JR., SR., III (or NONE)"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
       </div>
@@ -211,14 +211,14 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
             value={data.bloodType}
             onChange={(e) => updateField('bloodType', e.target.value.toUpperCase())}
             placeholder="e.g. O+, A+, B+, AB-"
-            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+            className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 "
           />
         </div>
       </div>
 
       {/* Official Gov IDs (Items 10-15 Revised 2026 schema: UMID, Pag-IBIG, PhilHealth, PhilSys PCN, TIN, Agency No) */}
       <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-3">
+        <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300 mb-3">
           Government Identification Numbers (2026 Revision)
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -304,7 +304,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
 
       {/* Citizenship (Item 16) */}
       <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4">
-        <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+        <label className="block text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300 mb-2">
           16. Citizenship
         </label>
         <div className="flex flex-wrap items-center gap-6 mb-3">
@@ -365,7 +365,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
 
       {/* Residential Address (Item 17) */}
       <div className="space-y-3">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+        <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
           17. Residential Address
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -447,7 +447,7 @@ export const Section1Personal: React.FC<Section1PersonalProps> = ({ data, onChan
       {/* Permanent Address (Item 18) */}
       <div className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300">
             18. Permanent Address
           </h4>
           <label className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 cursor-pointer">

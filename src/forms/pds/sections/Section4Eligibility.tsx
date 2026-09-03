@@ -98,7 +98,7 @@ export const Section4Eligibility: React.FC<Section4EligibilityProps> = ({ data, 
                     value={item.careerServiceRA1080OrSpecialLaw}
                     onChange={(e) => updateRow(idx, 'careerServiceRA1080OrSpecialLaw', e.target.value)}
                     placeholder="e.g. CAREER SERVICE PROFESSIONAL / RA 1080 (CPA/RN)"
-                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50 uppercase"
+                    className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
                   />
                 </div>
 

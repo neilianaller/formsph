@@ -1,5 +1,5 @@
 /**
- * FormsPH — Client-side Web Crypto API
+ * GovFormsPH — Client-side Web Crypto API
  * AES-GCM 256-bit encryption with PBKDF2 key derivation.
  * 100% in-browser, zero network, zero dependencies.
  */

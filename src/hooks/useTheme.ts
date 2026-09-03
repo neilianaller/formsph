@@ -6,7 +6,7 @@ export function useTheme() {
 
   useEffect(() => {
     // 1. Initial load from local storage or Dexie
-    const local = localStorage.getItem('formsph_theme');
+    const local = localStorage.getItem('GovFormsPH_theme');
     if (local === 'dark' || local === 'light') {
       setTheme(local);
       applyTheme(local);
@@ -37,7 +37,7 @@ export function useTheme() {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
     applyTheme(nextTheme);
-    localStorage.setItem('formsph_theme', nextTheme);
+    localStorage.setItem('GovFormsPH_theme', nextTheme);
 
     const settings = await db.settings.toCollection().first();
     if (settings && settings.id) {

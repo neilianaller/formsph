@@ -1,6 +1,6 @@
-# Contributing to FormsPH
+# Contributing to GovFormsPH
 
-Thank you for your interest in contributing to **FormsPH**! FormsPH is an open-source, offline-first, privacy-first Progressive Web App (PWA) form builder created for Philippine civil servants and government workers.
+Thank you for your interest in contributing to **GovFormsPH**! GovFormsPH is an open-source, offline-first, privacy-first Progressive Web App (PWA) form builder created for Philippine civil servants and government workers.
 
 ---
 
@@ -69,4 +69,4 @@ npm run build
 
 ## 📄 License
 
-By contributing to FormsPH, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing to GovFormsPH, you agree that your contributions will be licensed under the [MIT License](LICENSE).

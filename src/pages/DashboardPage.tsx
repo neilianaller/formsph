@@ -303,7 +303,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             Form Catalog & Templates
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            FormsPH is built to support all standard Philippine civil service and government documents.
+            GovFormsPH is built to support all standard Philippine civil service and government documents.
           </p>
         </div>
 

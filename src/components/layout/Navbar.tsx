@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div>
             <div className="flex items-center gap-1.5">
               <span className="font-bold text-base tracking-tight text-slate-900 dark:text-slate-100">
-                Forms
+                GovForms
                 <span className="text-teal-600 dark:text-teal-400">PH</span>
               </span>
             </div>

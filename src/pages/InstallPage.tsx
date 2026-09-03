@@ -26,10 +26,10 @@ export const InstallPage: React.FC = () => {
       <div>
         <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <Smartphone className="w-6 h-6 text-teal-600 dark:text-teal-400" />
-          Install FormsPH App
+          Install GovFormsPH App
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
-          Install FormsPH directly to your phone, tablet, or desktop. No app store account required, no download bloat.
+          Install GovFormsPH directly to your phone, tablet, or desktop. No app store account required, no download bloat.
         </p>
       </div>
 
@@ -48,7 +48,7 @@ export const InstallPage: React.FC = () => {
             )}
           </div>
           <h2 className="text-xl sm:text-2xl font-bold">
-            {isInstalled ? 'FormsPH is Ready Offline on this Device' : 'Add FormsPH to Your Home Screen or Desktop'}
+            {isInstalled ? 'GovFormsPH is Ready Offline on this Device' : 'Add GovFormsPH to Your Home Screen or Desktop'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
             Enjoy full offline capability, faster startup, zero browser toolbars, and resilient local storage.
@@ -102,7 +102,7 @@ export const InstallPage: React.FC = () => {
           <div className="space-y-1">
             <strong className="text-amber-300 block">Brave Browser Detected</strong>
             <p>
-              Brave supports full PWA installation. If the automated popup doesn't appear, you can click the install icon located inside the right side of the address bar, or select <strong>Menu (3 lines) &gt; Install FormsPH</strong>.
+              Brave supports full PWA installation. If the automated popup doesn't appear, you can click the install icon located inside the right side of the address bar, or select <strong>Menu (3 lines) &gt; Install GovFormsPH</strong>.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ export const InstallPage: React.FC = () => {
       {/* 5 Core Reasons Why Install */}
       <div>
         <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mb-4">
-          Why Install FormsPH?
+          Why Install GovFormsPH?
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -159,7 +159,7 @@ export const InstallPage: React.FC = () => {
               4. Home Screen & Dock Icon
             </h4>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Pin FormsPH directly to your macOS Dock, Windows Taskbar, Android Home Screen, or iOS App Library.
+              Pin GovFormsPH directly to your macOS Dock, Windows Taskbar, Android Home Screen, or iOS App Library.
             </p>
           </Card>
 
@@ -193,8 +193,8 @@ export const InstallPage: React.FC = () => {
             <ol className="space-y-2 text-xs text-slate-600 dark:text-slate-300 list-decimal list-inside">
               <li>Click the <strong>Install App Now</strong> button above.</li>
               <li>Or click the <strong>Install icon (⊕)</strong> on the right side of the address bar.</li>
-              <li>Or open the browser menu &gt; select <strong>Install FormsPH</strong>.</li>
-              <li>FormsPH opens in a dedicated, distraction-free desktop window.</li>
+              <li>Or open the browser menu &gt; select <strong>Install GovFormsPH</strong>.</li>
+              <li>GovFormsPH opens in a dedicated, distraction-free desktop window.</li>
             </ol>
           </Card>
 
@@ -208,7 +208,7 @@ export const InstallPage: React.FC = () => {
               <li>Tap the <strong>Install App Now</strong> button above.</li>
               <li>Or tap the <strong>Menu (3 dots)</strong> in the top right.</li>
               <li>Select <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
-              <li>Confirm to add FormsPH to your app drawer and home screen.</li>
+              <li>Confirm to add GovFormsPH to your app drawer and home screen.</li>
             </ol>
           </Card>
 
@@ -241,7 +241,7 @@ export const InstallPage: React.FC = () => {
           </div>
           <div>
             <strong className="text-slate-700 dark:text-slate-300 block mb-0.5">HTTPS & Security</strong>
-            PWAs require a secure HTTPS context or localhost. FormsPH automatically leverages HTTPS when hosted.
+            PWAs require a secure HTTPS context or localhost. GovFormsPH automatically leverages HTTPS when hosted.
           </div>
         </div>
       </Card>

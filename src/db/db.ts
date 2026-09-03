@@ -1,12 +1,12 @@
 import Dexie, { Table } from 'dexie';
 import { PdsRecord, AppSettings } from '../types/pds';
 
-export class FormsPHDatabase extends Dexie {
+export class GovFormsPHDatabase extends Dexie {
   pdsRecords!: Table<PdsRecord, number>;
   settings!: Table<AppSettings, number>;
 
   constructor() {
-    super('FormsPHDatabase');
+    super('GovFormsPHDatabase');
 
     // Schema version 1
     this.version(1).stores({
@@ -22,7 +22,7 @@ export class FormsPHDatabase extends Dexie {
   }
 }
 
-export const db = new FormsPHDatabase();
+export const db = new GovFormsPHDatabase();
 
 /**
  * Initialize default settings if none exist

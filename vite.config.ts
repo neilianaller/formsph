@@ -11,8 +11,8 @@ export default defineConfig({
       injectRegister: 'auto',
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'maskable-icon-512.png'],
       manifest: {
-        name: 'FormsPH — Philippine Government Form Builder',
-        short_name: 'FormsPH',
+        name: 'GovFormsPH — Philippine Government Form Builder',
+        short_name: 'GovFormsPH',
         description: 'Offline-first, privacy-first Philippine government form filler and builder starting with PDS (CS Form No. 212 Revised 2026). All data stays locally on your device.',
         theme_color: '#0F172A',
         background_color: '#0F172A',

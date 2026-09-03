@@ -37,7 +37,7 @@ export const Section8OtherInfo: React.FC<Section8OtherInfoProps> = ({ data, onCh
   ) => (
     <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+        <h4 className="text-xs font-bold  tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
           {icon}
           {itemNumber}. {title}
         </h4>

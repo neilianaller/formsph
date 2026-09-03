@@ -1,5 +1,5 @@
 /**
- * FormsPH — Date Utilities
+ * GovFormsPH — Date Utilities
  * Handles Civil Service Commission (CSC) date standards:
  * - dd/mm/yyyy for general dates
  * - yyyy for education period of attendance & graduation

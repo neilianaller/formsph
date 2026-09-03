@@ -1,4 +1,4 @@
-# FormsPH 🇵🇭
+# GovFormsPH 🇵🇭
 
 > **Offline-first, privacy-first Philippine government form builder & filler.**  
 > *"Your data never leaves your device unless you choose to export it."*
@@ -12,7 +12,7 @@
 
 ## 🌟 Overview
 
-**FormsPH** is an open-source Progressive Web App (PWA) tailored specifically for Philippine civil servants and government workers. It provides an intuitive, step-by-step builder and filler for official government documents, starting with the **Personal Data Sheet (CS Form No. 212, Revised 2026)**.
+**GovFormsPH** is an open-source Progressive Web App (PWA) tailored specifically for Philippine civil servants and government workers. It provides an intuitive, step-by-step builder and filler for official government documents, starting with the **Personal Data Sheet (CS Form No. 212, Revised 2026)**.
 
 All form data, draft iterations, attachments, and settings are stored **locally in your browser's IndexedDB via Dexie.js**. There are zero cloud databases, zero telemetry trackers, and zero accounts needed.
 
@@ -78,8 +78,8 @@ All form data, draft iterations, attachments, and settings are stored **locally 
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/formsph.git
-cd formsph
+git clone https://github.com/your-username/GovFormsPH.git
+cd GovFormsPH
 
 # Install dependencies
 npm install
@@ -103,7 +103,7 @@ npm run preview
 ## 🔒 Privacy & Security Architecture
 
 1. **No External Network Transmissions:** Form inputs and photo attachments never leave the client device.
-2. **Persistent Storage API:** FormsPH calls `navigator.storage.persist()` to safeguard your IndexedDB database against automatic browser eviction.
+2. **Persistent Storage API:** GovFormsPH calls `navigator.storage.persist()` to safeguard your IndexedDB database against automatic browser eviction.
 3. **Encrypted Backups:** Password-protected backups are encrypted with 100,000 PBKDF2 iterations and AES-GCM 256-bit cipher entirely in the browser before download.
 
 ---

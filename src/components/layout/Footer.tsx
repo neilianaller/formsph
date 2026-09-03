@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             About & License
           </button>
           <a
-            href="https://github.com/neilianaller/formsph"
+            href="https://github.com/neilianaller/govformsph"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 hover:text-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer"

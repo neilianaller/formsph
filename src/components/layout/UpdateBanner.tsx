@@ -21,7 +21,7 @@ export const UpdateBanner: React.FC<UpdateBannerProps> = ({ show, onUpdate, onDi
           <div>
             <h4 className="text-sm font-semibold text-white">Update Available</h4>
             <p className="text-xs text-slate-300 mt-0.5">
-              A new version of FormsPH is ready with improvements. Refresh to update.
+              A new version of GovFormsPH is ready with improvements. Refresh to update.
             </p>
           </div>
         </div>

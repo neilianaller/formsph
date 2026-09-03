@@ -158,11 +158,11 @@ export const PrivacyPage: React.FC = () => {
           </h3>
         </div>
         <p className="text-xs text-slate-300 leading-relaxed">
-          FormsPH is open source under the MIT License. You do not need to blindly trust our claims. Any developer or security researcher can inspect the complete source code, review every network call in the Network Inspector, and verify that all data operations occur strictly within the client device.
+          GovFormsPH is open source under the MIT License. You do not need to blindly trust our claims. Any developer or security researcher can inspect the complete source code, review every network call in the Network Inspector, and verify that all data operations occur strictly within the client device.
         </p>
         <div className="pt-2">
           <a
-            href="https://github.com/neilianaller/formsph"
+            href="https://github.com/neilianaller/govformsph"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-teal-300 hover:text-teal-200 font-semibold"
