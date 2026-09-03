@@ -46,9 +46,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
                 </h2>
                 <Badge variant="success" size="sm">v{version}</Badge>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                CS Form No. 212 (Revised 2026) Compliant
-              </p>
             </div>
           </div>
 
