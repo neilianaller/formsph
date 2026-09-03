@@ -10,6 +10,7 @@ import {
   HardDrive,
   Download,
   HelpCircle,
+  Mail,
 } from 'lucide-react';
 
 interface AboutPageProps {
@@ -127,6 +128,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onReplayTour }) => {
               </ul>
             </div>
           </div>
+        </div>
+      </Card>
+
+      <Card className="flex items-center gap-3">
+        <Mail className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0" />
+        <div className="text-xs">
+          <h2 className="font-bold text-slate-900 dark:text-slate-100">Contact</h2>
+          <a
+            href="mailto:govformsph@neilian.dev"
+            className="text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+          >
+            govformsph@neilian.dev
+          </a>
         </div>
       </Card>
     </div>

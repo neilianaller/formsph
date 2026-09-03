@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useLiveQuery } from 'dexie-react-hooks';
-import { db } from '../db/db';
-import { PdsRecord } from '../types/pds';
-import { Button } from '../components/common/Button';
-import { Card } from '../components/common/Card';
-import { Badge } from '../components/common/Badge';
-import { Modal } from '../components/common/Modal';
-import { formatRelativeDateTime } from '../utils/dateUtils';
-import { exportSingleRecord, triggerDownload } from '../utils/exportImport';
+import React, { useState } from "react";
+import { useLiveQuery } from "dexie-react-hooks";
+import { db } from "../db/db";
+import { PdsRecord } from "../types/pds";
+import { Button } from "../components/common/Button";
+import { Card } from "../components/common/Card";
+import { Badge } from "../components/common/Badge";
+import { Modal } from "../components/common/Modal";
+import { formatRelativeDateTime } from "../utils/dateUtils";
+import { exportSingleRecord, triggerDownload } from "../utils/exportImport";
 import {
   FileText,
   Plus,
@@ -15,10 +15,9 @@ import {
   Trash2,
   Download,
   Search,
-  HardDrive,
   ShieldCheck,
-  Clock
-} from 'lucide-react';
+  Clock,
+} from "lucide-react";
 
 interface DashboardPageProps {
   onSelectRecord: (record: PdsRecord) => void;
@@ -32,17 +31,23 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   onNewForm,
   onNavigateToExport,
 }) => {
-  const records = useLiveQuery(() => db.pdsRecords.orderBy('meta.updatedAt').reverse().toArray(), []);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [deleteConfirmRecord, setDeleteConfirmRecord] = useState<PdsRecord | null>(null);
+  const records = useLiveQuery(
+    () => db.pdsRecords.orderBy("meta.updatedAt").reverse().toArray(),
+    [],
+  );
+  const [searchTerm, setSearchTerm] = useState("");
+  const [deleteConfirmRecord, setDeleteConfirmRecord] =
+    useState<PdsRecord | null>(null);
 
   const filteredRecords = records?.filter((r) => {
     if (!searchTerm) return true;
     const term = searchTerm.toLowerCase();
-    const title = (r.meta?.title || '').toLowerCase();
-    const surname = (r.personalInfo?.surname || '').toLowerCase();
-    const firstName = (r.personalInfo?.firstName || '').toLowerCase();
-    return title.includes(term) || surname.includes(term) || firstName.includes(term);
+    const title = (r.meta?.title || "").toLowerCase();
+    const surname = (r.personalInfo?.surname || "").toLowerCase();
+    const firstName = (r.personalInfo?.firstName || "").toLowerCase();
+    return (
+      title.includes(term) || surname.includes(term) || firstName.includes(term)
+    );
   });
 
   const handleDelete = async (record: PdsRecord) => {
@@ -57,7 +62,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
       ...record,
       meta: {
         ...record.meta,
-        title: `${record.meta.title || 'PDS Form'} (Copy)`,
+        title: `${record.meta.title || "PDS Form"} (Copy)`,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       },
@@ -77,9 +82,18 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   // Helper to compute section completion
   const getCompletionPercent = (record: PdsRecord) => {
     let score = 0;
-    if (record.personalInfo?.surname && record.personalInfo?.firstName) score += 25;
-    if (record.education?.elementary?.nameOfSchool || record.education?.college?.[0]?.nameOfSchool) score += 25;
-    if (record.workExperience?.length > 0 && record.workExperience[0]?.positionTitle) score += 25;
+    if (record.personalInfo?.surname && record.personalInfo?.firstName)
+      score += 25;
+    if (
+      record.education?.elementary?.nameOfSchool ||
+      record.education?.college?.[0]?.nameOfSchool
+    )
+      score += 25;
+    if (
+      record.workExperience?.length > 0 &&
+      record.workExperience[0]?.positionTitle
+    )
+      score += 25;
     if (record.declaration?.acknowledgedTerms) score += 25;
     return score;
   };
@@ -96,7 +110,9 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             Philippine Government Form Builder & Filler
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-            Effortlessly fill, manage, and print your <strong>CS Form No. 212 (Revised 2026)</strong> Personal Data Sheet. All data is saved strictly in your device’s IndexedDB database.
+            Effortlessly fill, manage, and print your government forms starting with {" "}
+            <strong>CS Form No. 212 (Revised 2026)</strong> Personal Data Sheet.
+            All data is saved strictly in your device.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -131,33 +147,12 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             <FileText className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Saved Forms</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Saved Forms
+            </p>
             <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
-              {records ? records.length : 0} {records?.length === 1 ? 'Record' : 'Records'}
-            </p>
-          </div>
-        </Card>
-
-        <Card className="flex items-center gap-4">
-          <div className="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">
-            <HardDrive className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Storage Engine</p>
-            <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
-              Dexie IndexedDB (Local)
-            </p>
-          </div>
-        </Card>
-
-        <Card className="flex items-center gap-4">
-          <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">Cloud Sync Status</p>
-            <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
-              Local Form Data Only
+              {records ? records.length : 0}{" "}
+              {records?.length === 1 ? "Record" : "Records"}
             </p>
           </div>
         </Card>
@@ -190,17 +185,19 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
 
         {/* Form List / Cards */}
         {filteredRecords === undefined ? (
-          <div className="text-center py-12 text-slate-400 text-xs">Loading saved forms...</div>
+          <div className="text-center py-12 text-slate-400 text-xs">
+            Loading saved forms...
+          </div>
         ) : filteredRecords.length === 0 ? (
           <div className="text-center py-12 px-4 bg-surface-light dark:bg-surface-dark border border-dashed border-border-light dark:border-border-dark rounded-2xl">
             <FileText className="w-12 h-12 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
             <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">
-              {searchTerm ? 'No matching forms found' : 'No forms saved yet'}
+              {searchTerm ? "No matching forms found" : "No forms saved yet"}
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto mt-1 mb-5">
               {searchTerm
-                ? 'Try searching with different keywords.'
-                : 'Create your first Personal Data Sheet (CS Form 212 Revised 2026) draft to get started.'}
+                ? "Try searching with different keywords."
+                : "Create your first Personal Data Sheet (CS Form 212 Revised 2026) draft to get started."}
             </p>
             <Button
               variant="primary"
@@ -214,9 +211,13 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredRecords.map((rec) => {
-              const fullName = [rec.personalInfo?.surname, rec.personalInfo?.firstName, rec.personalInfo?.middleName]
+              const fullName = [
+                rec.personalInfo?.surname,
+                rec.personalInfo?.firstName,
+                rec.personalInfo?.middleName,
+              ]
                 .filter(Boolean)
-                .join(', ');
+                .join(", ");
               const completion = getCompletionPercent(rec);
 
               return (
@@ -229,15 +230,21 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                   <div>
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors line-clamp-1">
-                        {rec.meta?.title || 'Personal Data Sheet'}
+                        {rec.meta?.title || "Personal Data Sheet"}
                       </h3>
                       <Badge variant="info" size="sm">
-                        {rec.meta?.formVersion || '2026'}
+                        {rec.meta?.formVersion || "2026"}
                       </Badge>
                     </div>
 
                     <p className="text-xs font-medium text-slate-700 dark:text-slate-300 mb-3">
-                      {fullName ? fullName.toUpperCase() : <span className="italic text-slate-400">No name specified yet</span>}
+                      {fullName ? (
+                        fullName.toUpperCase()
+                      ) : (
+                        <span className="italic text-slate-400">
+                          No name specified yet
+                        </span>
+                      )}
                     </p>
 
                     {/* Progress indicator */}
@@ -262,7 +269,10 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                       {formatRelativeDateTime(rec.meta?.updatedAt)}
                     </span>
 
-                    <div className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
+                    <div
+                      className="flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <button
                         onClick={(e) => handleExportSingle(rec, e)}
                         className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
@@ -303,7 +313,8 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             Form Catalog & Templates
           </h2>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            GovFormsPH is built to support all standard Philippine civil service and government documents.
+            GovFormsPH is built to support all standard Philippine civil service
+            and government documents.
           </p>
         </div>
 
@@ -312,14 +323,17 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <Card className="border-teal-500/40 dark:border-teal-400/40 bg-teal-50/20 dark:bg-teal-950/20 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <Badge variant="success" size="sm">Active (Revised 2026)</Badge>
+                <Badge variant="success" size="sm">
+                  Active (Revised 2026)
+                </Badge>
                 <FileText className="w-5 h-5 text-teal-600 dark:text-teal-400" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
                 Personal Data Sheet (PDS)
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-400 mb-4">
-                CSC Form No. 212 with complete Sections I–VIII, Questions 34–40, and 4-page print preview.
+                CSC Form No. 212 with complete Sections I–VIII, Questions 34–40,
+                and 4-page print preview.
               </p>
             </div>
             <Button variant="primary" size="sm" onClick={onNewForm}>
@@ -331,31 +345,58 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <Card className="opacity-75 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <Badge variant="default" size="sm">Planned</Badge>
+                <Badge variant="default" size="sm">
+                  Planned
+                </Badge>
+                <FileText className="w-5 h-5 text-slate-400" />
+              </div>
+              <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
+                Work Experience Sheet
+              </h3>
+            </div>
+            <span className="text-xs text-slate-400 font-medium">
+              Coming soon in next release
+            </span>
+          </Card>
+
+          {/* Coming Soon: SALN */}
+          <Card className="opacity-75 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <Badge variant="default" size="sm">
+                  Planned
+                </Badge>
                 <FileText className="w-5 h-5 text-slate-400" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
                 SALN
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
-                Statement of Assets, Liabilities, and Net Worth with real-time computation.
+                Statement of Assets, Liabilities, and Net Worth with real-time
+                computation.
               </p>
             </div>
-            <span className="text-xs text-slate-400 font-medium">Coming soon in next release</span>
+            <span className="text-xs text-slate-400 font-medium">
+              Coming soon in next release
+            </span>
           </Card>
 
           {/* Coming Soon: DTR */}
           <Card className="opacity-75 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <Badge variant="default" size="sm">Planned</Badge>
+                <Badge variant="default" size="sm">
+                  Planned
+                </Badge>
                 <FileText className="w-5 h-5 text-slate-400" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">
                 Service Record
               </h3>
             </div>
-            <span className="text-xs text-slate-400 font-medium">Coming soon in next release</span>
+            <span className="text-xs text-slate-400 font-medium">
+              Coming soon in next release
+            </span>
           </Card>
         </div>
       </div>
@@ -369,17 +410,25 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
       >
         <div className="space-y-4">
           <p className="text-sm text-slate-600 dark:text-slate-300">
-            This action will permanently delete <strong>{deleteConfirmRecord?.meta?.title}</strong> from this browser’s IndexedDB storage.
+            This action will permanently delete{" "}
+            <strong>{deleteConfirmRecord?.meta?.title}</strong> from this
+            browser.
           </p>
           <div className="flex items-center justify-end gap-2">
-            <Button variant="outline" size="sm" onClick={() => setDeleteConfirmRecord(null)}>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setDeleteConfirmRecord(null)}
+            >
               Cancel
             </Button>
             <Button
               variant="danger"
               size="sm"
               icon={<Trash2 className="w-4 h-4" />}
-              onClick={() => deleteConfirmRecord && handleDelete(deleteConfirmRecord)}
+              onClick={() =>
+                deleteConfirmRecord && handleDelete(deleteConfirmRecord)
+              }
             >
               Delete Permanently
             </Button>

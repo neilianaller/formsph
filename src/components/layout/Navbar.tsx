@@ -121,6 +121,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <span>PDS</span>
                 </button>
                 <div className="w-full text-left px-3.5 py-2 text-xs font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed flex items-center justify-between">
+                  <span>Work Experience Sheet</span>
+                  <span className="text-[10px] text-slate-400 dark:text-slate-600 italic">
+                    Coming soon
+                  </span>
+                </div>
+                <div className="w-full text-left px-3.5 py-2 text-xs font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed flex items-center justify-between">
                   <span>SALN</span>
                   <span className="text-[10px] text-slate-400 dark:text-slate-600 italic">
                     Coming soon
@@ -259,6 +265,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <span>PDS</span>
               </button>
+              <div className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed">
+                <span>Work Experience Sheet</span>
+                <span className="text-[10px] text-slate-400 dark:text-slate-600 italic">
+                  Coming soon
+                </span>
+              </div>
               <div className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-400 dark:text-slate-500 cursor-not-allowed">
                 <span>SALN</span>
                 <span className="text-[10px] text-slate-400 dark:text-slate-600 italic">
