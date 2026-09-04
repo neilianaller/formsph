@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://govformsph.neilian.dev/sitemap.xml
